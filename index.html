@@ -1,0 +1,445 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TimeCam - サポート</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;700&family=Noto+Sans+JP:wght@300;400;600;700&display=swap');
+
+        :root {
+            --navy: #0a1628;
+            --teal-deep: #0d2b2f;
+            --teal: #1a5c5e;
+            --teal-light: #2a8a8c;
+            --gold: #d4a24e;
+            --gold-light: #e8c478;
+            --gold-pale: #f5e0b0;
+            --cream: #faf6ee;
+            --text-primary: #f0ece4;
+            --text-secondary: #a8b4b4;
+            --card-bg: rgba(255, 255, 255, 0.04);
+            --card-border: rgba(212, 162, 78, 0.15);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Outfit', 'Noto Sans JP', sans-serif;
+            background: linear-gradient(165deg, var(--navy) 0%, var(--teal-deep) 50%, var(--navy) 100%);
+            color: var(--text-primary);
+            min-height: 100vh;
+            overflow-x: hidden;
+        }
+
+        /* Film grain overlay */
+        body::before {
+            content: '';
+            position: fixed;
+            top: 0; left: 0; right: 0; bottom: 0;
+            background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)' opacity='0.03'/%3E%3C/svg%3E");
+            pointer-events: none;
+            z-index: 1;
+        }
+
+        .container {
+            max-width: 720px;
+            margin: 0 auto;
+            padding: 0 24px;
+            position: relative;
+            z-index: 2;
+        }
+
+        /* Header / Hero */
+        header {
+            text-align: center;
+            padding: 80px 0 48px;
+        }
+
+        .app-icon {
+            width: 120px;
+            height: 120px;
+            border-radius: 27px;
+            box-shadow: 0 12px 40px rgba(212, 162, 78, 0.2), 0 0 0 1px rgba(212, 162, 78, 0.1);
+            margin-bottom: 28px;
+            animation: floatIn 0.8s ease-out;
+        }
+
+        @keyframes floatIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        h1 {
+            font-family: 'Outfit', sans-serif;
+            font-size: 2.8rem;
+            font-weight: 700;
+            letter-spacing: -0.02em;
+            background: linear-gradient(135deg, var(--gold-light), var(--gold), var(--gold-pale));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            margin-bottom: 12px;
+        }
+
+        .tagline {
+            font-size: 1.1rem;
+            color: var(--text-secondary);
+            font-weight: 300;
+            letter-spacing: 0.02em;
+        }
+
+        /* Film strip divider */
+        .film-divider {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 4px;
+            margin: 48px 0;
+            opacity: 0.3;
+        }
+
+        .film-hole {
+            width: 8px;
+            height: 8px;
+            border-radius: 2px;
+            border: 1.5px solid var(--gold);
+        }
+
+        .film-frame {
+            width: 40px;
+            height: 28px;
+            border-radius: 2px;
+            border: 1.5px solid var(--gold);
+        }
+
+        /* Sections */
+        section {
+            margin-bottom: 56px;
+        }
+
+        h2 {
+            font-family: 'Outfit', sans-serif;
+            font-size: 1.5rem;
+            font-weight: 600;
+            color: var(--gold-light);
+            margin-bottom: 20px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        h2 .icon {
+            font-size: 1.2rem;
+        }
+
+        p {
+            font-size: 1rem;
+            line-height: 1.8;
+            color: var(--text-secondary);
+            margin-bottom: 16px;
+        }
+
+        a {
+            color: var(--gold);
+            text-decoration: none;
+            border-bottom: 1px solid rgba(212, 162, 78, 0.3);
+            transition: border-color 0.3s;
+        }
+
+        a:hover {
+            border-bottom-color: var(--gold);
+        }
+
+        /* Feature cards */
+        .features {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 16px;
+            margin-top: 20px;
+        }
+
+        @media (max-width: 520px) {
+            .features { grid-template-columns: 1fr; }
+        }
+
+        .feature-card {
+            background: var(--card-bg);
+            border: 1px solid var(--card-border);
+            border-radius: 16px;
+            padding: 24px;
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+
+        .feature-card:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 24px rgba(212, 162, 78, 0.08);
+        }
+
+        .feature-card .era {
+            font-family: 'Outfit', sans-serif;
+            font-size: 1.6rem;
+            font-weight: 700;
+            color: var(--gold);
+            margin-bottom: 6px;
+        }
+
+        .feature-card .desc {
+            font-size: 0.88rem;
+            color: var(--text-secondary);
+            line-height: 1.6;
+        }
+
+        /* FAQ */
+        .faq-item {
+            background: var(--card-bg);
+            border: 1px solid var(--card-border);
+            border-radius: 12px;
+            padding: 20px 24px;
+            margin-bottom: 12px;
+        }
+
+        .faq-item dt {
+            font-weight: 600;
+            color: var(--text-primary);
+            margin-bottom: 8px;
+            font-size: 0.95rem;
+        }
+
+        .faq-item dd {
+            color: var(--text-secondary);
+            font-size: 0.9rem;
+            line-height: 1.7;
+        }
+
+        /* Contact */
+        .contact-box {
+            background: linear-gradient(135deg, rgba(212, 162, 78, 0.08), rgba(26, 92, 94, 0.12));
+            border: 1px solid var(--card-border);
+            border-radius: 16px;
+            padding: 32px;
+            text-align: center;
+        }
+
+        .contact-box .email {
+            display: inline-block;
+            font-family: 'Outfit', monospace;
+            font-size: 1.15rem;
+            color: var(--gold-light);
+            margin-top: 12px;
+            padding: 10px 24px;
+            border: 1px solid rgba(212, 162, 78, 0.3);
+            border-radius: 8px;
+            transition: background 0.3s;
+        }
+
+        .contact-box .email:hover {
+            background: rgba(212, 162, 78, 0.08);
+            border-bottom: 1px solid rgba(212, 162, 78, 0.3);
+        }
+
+        /* Footer */
+        footer {
+            text-align: center;
+            padding: 48px 0 64px;
+            color: rgba(168, 180, 180, 0.4);
+            font-size: 0.82rem;
+        }
+
+        footer .dev {
+            color: rgba(212, 162, 78, 0.4);
+        }
+
+        /* Language switcher */
+        .lang-switch {
+            position: fixed;
+            top: 20px;
+            right: 20px;
+            z-index: 100;
+            display: flex;
+            gap: 2px;
+            background: var(--card-bg);
+            border: 1px solid var(--card-border);
+            border-radius: 8px;
+            overflow: hidden;
+            backdrop-filter: blur(12px);
+        }
+
+        .lang-switch button {
+            background: none;
+            border: none;
+            color: var(--text-secondary);
+            font-family: 'Outfit', sans-serif;
+            font-size: 0.8rem;
+            padding: 8px 14px;
+            cursor: pointer;
+            transition: all 0.3s;
+        }
+
+        .lang-switch button.active {
+            background: rgba(212, 162, 78, 0.15);
+            color: var(--gold-light);
+        }
+
+        .lang-switch button:hover:not(.active) {
+            color: var(--text-primary);
+        }
+
+        [lang="en"] { display: none; }
+        body.en [lang="en"] { display: block; }
+        body.en [lang="ja"] { display: none; }
+    </style>
+</head>
+<body>
+    <div class="lang-switch">
+        <button class="active" onclick="switchLang('ja')">JA</button>
+        <button onclick="switchLang('en')">EN</button>
+    </div>
+
+    <div class="container">
+        <!-- Header -->
+        <header>
+            <!-- Replace src with actual app icon -->
+            <img src="icon.png" alt="TimeCam" class="app-icon"
+                 onerror="this.style.background='linear-gradient(135deg,#0d2b2f,#1a5c5e)';this.style.display='block';">
+            <h1>TimeCam</h1>
+            <p class="tagline" lang="ja">年代を選んで、写真をタイムトラベル</p>
+            <p class="tagline" lang="en">Slide through decades, time-travel your photos</p>
+        </header>
+
+        <!-- Features -->
+        <section lang="ja">
+            <h2><span class="icon">📷</span> 機能</h2>
+            <p>TimeCamは、あなたの写真を選んだ年代の雰囲気に変換するノスタルジー写真アプリです。スライダーを動かすだけで、1970年代〜2020年代を自由に行き来できます。</p>
+            <div class="features">
+                <div class="feature-card">
+                    <div class="era">2000s</div>
+                    <div class="desc">ガラケー写メ風。低解像度と赤文字の日付スタンプ。</div>
+                </div>
+                <div class="feature-card">
+                    <div class="era">1990s</div>
+                    <div class="desc">使い捨てカメラ風。光漏れ、フラッシュ白飛び、粗い粒子。</div>
+                </div>
+                <div class="feature-card">
+                    <div class="era">1980s</div>
+                    <div class="desc">ポラロイド風。色褪せ、白枠フレーム。</div>
+                </div>
+                <div class="feature-card">
+                    <div class="era">1970s</div>
+                    <div class="desc">セピア調。強い退色、印画紙テクスチャ。</div>
+                </div>
+            </div>
+        </section>
+
+        <section lang="en">
+            <h2><span class="icon">📷</span> Features</h2>
+            <p>TimeCam transforms your photos into the look and feel of any decade. Just move the slider and watch your photo time-travel from the 1970s to 2020s in real-time.</p>
+            <div class="features">
+                <div class="feature-card">
+                    <div class="era">2000s</div>
+                    <div class="desc">Flip phone camera look with low resolution and red date stamp.</div>
+                </div>
+                <div class="feature-card">
+                    <div class="era">1990s</div>
+                    <div class="desc">Disposable camera style with light leaks, flash, and heavy grain.</div>
+                </div>
+                <div class="feature-card">
+                    <div class="era">1980s</div>
+                    <div class="desc">Polaroid feel with faded colors and white border frame.</div>
+                </div>
+                <div class="feature-card">
+                    <div class="era">1970s</div>
+                    <div class="desc">Deep sepia tones with heavy fading and photo paper texture.</div>
+                </div>
+            </div>
+        </section>
+
+        <div class="film-divider">
+            <span class="film-hole"></span><span class="film-hole"></span>
+            <span class="film-frame"></span><span class="film-frame"></span><span class="film-frame"></span>
+            <span class="film-frame"></span><span class="film-frame"></span>
+            <span class="film-hole"></span><span class="film-hole"></span>
+        </div>
+
+        <!-- FAQ -->
+        <section lang="ja">
+            <h2><span class="icon">💬</span> よくある質問</h2>
+            <dl>
+                <div class="faq-item">
+                    <dt>Q. 無料で使えますか？</dt>
+                    <dd>はい。2020年代・2000年代・1990年代のエフェクトは無料でお使いいただけます。全年代のアンロックや透かし除去にはPro（買い切り）へのアップグレードが必要です。</dd>
+                </div>
+                <div class="faq-item">
+                    <dt>Q. Pro版はサブスクリプションですか？</dt>
+                    <dd>いいえ。一度の購入で永久にご利用いただける買い切り型です。月額・年額の請求は一切ありません。</dd>
+                </div>
+                <div class="faq-item">
+                    <dt>Q. 対応しているiOSバージョンは？</dt>
+                    <dd>iOS 17.0以降に対応しています。</dd>
+                </div>
+                <div class="faq-item">
+                    <dt>Q. 撮影した写真以外も加工できますか？</dt>
+                    <dd>はい。カメラロールの既存の写真も加工できます。</dd>
+                </div>
+            </dl>
+        </section>
+
+        <section lang="en">
+            <h2><span class="icon">💬</span> FAQ</h2>
+            <dl>
+                <div class="faq-item">
+                    <dt>Q. Is it free to use?</dt>
+                    <dd>Yes. The 2020s, 2000s, and 1990s effects are available for free. Unlocking all eras and removing the watermark requires a Pro upgrade (one-time purchase).</dd>
+                </div>
+                <div class="faq-item">
+                    <dt>Q. Is Pro a subscription?</dt>
+                    <dd>No. It's a one-time purchase — pay once and use forever. No monthly or annual charges.</dd>
+                </div>
+                <div class="faq-item">
+                    <dt>Q. What iOS version is required?</dt>
+                    <dd>TimeCam requires iOS 17.0 or later.</dd>
+                </div>
+                <div class="faq-item">
+                    <dt>Q. Can I edit existing photos?</dt>
+                    <dd>Yes. You can import and edit any photo from your camera roll.</dd>
+                </div>
+            </dl>
+        </section>
+
+        <div class="film-divider">
+            <span class="film-hole"></span><span class="film-hole"></span>
+            <span class="film-frame"></span><span class="film-frame"></span><span class="film-frame"></span>
+            <span class="film-frame"></span><span class="film-frame"></span>
+            <span class="film-hole"></span><span class="film-hole"></span>
+        </div>
+
+        <!-- Contact -->
+        <section>
+            <h2><span class="icon">✉️</span> <span lang="ja">お問い合わせ</span><span lang="en">Contact</span></h2>
+            <div class="contact-box">
+                <p lang="ja">ご質問・不具合のご報告はこちらまでお願いいたします。</p>
+                <p lang="en">For questions, feedback, or bug reports, please reach out to us.</p>
+                <a href="mailto:contact@kouworks.jp" class="email">contact@kouworks.jp</a>
+            </div>
+        </section>
+
+        <!-- Footer -->
+        <footer>
+            <p>&copy; 2026 <span class="dev">kouworks</span>. All rights reserved.</p>
+        </footer>
+    </div>
+
+    <script>
+        function switchLang(lang) {
+            document.body.className = lang === 'en' ? 'en' : '';
+            document.querySelectorAll('.lang-switch button').forEach(btn => {
+                btn.classList.toggle('active', btn.textContent === lang.toUpperCase());
+            });
+        }
+    </script>
+</body>
+</html>
