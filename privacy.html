@@ -1,0 +1,432 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TimeCam - プライバシーポリシー / Privacy Policy</title>
+    <meta name="description" content="TimeCam のプライバシーポリシー。写真はすべて端末内で処理され、外部に送信されません。TimeCam's privacy policy. All photos are processed on-device and never transmitted externally.">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;700&family=Noto+Sans+JP:wght@300;400;600;700&display=swap');
+
+        :root {
+            --navy: #0a1628;
+            --teal-deep: #0d2b2f;
+            --teal: #1a5c5e;
+            --teal-light: #2a8a8c;
+            --gold: #d4a24e;
+            --gold-light: #e8c478;
+            --gold-pale: #f5e0b0;
+            --cream: #faf6ee;
+            --text-primary: #f0ece4;
+            --text-secondary: #a8b4b4;
+            --card-bg: rgba(255, 255, 255, 0.04);
+            --card-border: rgba(212, 162, 78, 0.15);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Outfit', 'Noto Sans JP', sans-serif;
+            background: linear-gradient(165deg, var(--navy) 0%, var(--teal-deep) 50%, var(--navy) 100%);
+            color: var(--text-primary);
+            min-height: 100vh;
+            overflow-x: hidden;
+        }
+
+        body::before {
+            content: '';
+            position: fixed;
+            top: 0; left: 0; right: 0; bottom: 0;
+            background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)' opacity='0.03'/%3E%3C/svg%3E");
+            pointer-events: none;
+            z-index: 1;
+        }
+
+        .container {
+            max-width: 720px;
+            margin: 0 auto;
+            padding: 0 24px;
+            position: relative;
+            z-index: 2;
+        }
+
+        header {
+            text-align: center;
+            padding: 72px 0 40px;
+        }
+
+        .back {
+            display: inline-block;
+            margin-bottom: 24px;
+            font-size: 0.85rem;
+            color: var(--text-secondary);
+            text-decoration: none;
+            border-bottom: 1px solid transparent;
+        }
+
+        .back:hover {
+            color: var(--gold-light);
+            border-bottom-color: rgba(212, 162, 78, 0.3);
+        }
+
+        h1 {
+            font-family: 'Outfit', sans-serif;
+            font-size: 2.1rem;
+            font-weight: 700;
+            letter-spacing: -0.02em;
+            background: linear-gradient(135deg, var(--gold-light), var(--gold), var(--gold-pale));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            margin-bottom: 10px;
+        }
+
+        .updated {
+            font-size: 0.88rem;
+            color: var(--text-secondary);
+        }
+
+        section {
+            margin-bottom: 40px;
+        }
+
+        h2 {
+            font-family: 'Outfit', sans-serif;
+            font-size: 1.2rem;
+            font-weight: 600;
+            color: var(--gold-light);
+            margin: 32px 0 14px;
+            padding-bottom: 8px;
+            border-bottom: 1px solid var(--card-border);
+        }
+
+        h2:first-of-type { margin-top: 0; }
+
+        p {
+            font-size: 0.98rem;
+            line-height: 1.85;
+            color: var(--text-secondary);
+            margin-bottom: 14px;
+        }
+
+        ul {
+            margin: 10px 0 14px;
+            padding-left: 22px;
+        }
+
+        li {
+            font-size: 0.98rem;
+            line-height: 1.8;
+            color: var(--text-secondary);
+            margin-bottom: 8px;
+        }
+
+        strong {
+            color: var(--text-primary);
+            font-weight: 600;
+        }
+
+        a {
+            color: var(--gold);
+            text-decoration: none;
+            border-bottom: 1px solid rgba(212, 162, 78, 0.3);
+            transition: border-color 0.3s;
+        }
+
+        a:hover {
+            border-bottom-color: var(--gold);
+        }
+
+        .highlight {
+            background: var(--card-bg);
+            border: 1px solid var(--card-border);
+            border-left: 3px solid var(--gold);
+            border-radius: 12px;
+            padding: 20px 24px;
+            margin-bottom: 8px;
+        }
+
+        .highlight ul { margin-bottom: 0; }
+
+        .film-divider {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 4px;
+            margin: 48px 0;
+            opacity: 0.3;
+        }
+
+        .film-hole {
+            width: 8px;
+            height: 8px;
+            border-radius: 2px;
+            border: 1.5px solid var(--gold);
+        }
+
+        .film-frame {
+            width: 40px;
+            height: 28px;
+            border-radius: 2px;
+            border: 1.5px solid var(--gold);
+        }
+
+        footer {
+            text-align: center;
+            padding: 32px 0 64px;
+            color: rgba(168, 180, 180, 0.4);
+            font-size: 0.82rem;
+        }
+
+        footer a {
+            color: rgba(168, 180, 180, 0.6);
+            border-bottom: none;
+            margin: 0 6px;
+        }
+
+        .lang-switch {
+            position: fixed;
+            top: 20px;
+            right: 20px;
+            z-index: 100;
+            display: flex;
+            gap: 2px;
+            background: var(--card-bg);
+            border: 1px solid var(--card-border);
+            border-radius: 8px;
+            overflow: hidden;
+            backdrop-filter: blur(12px);
+        }
+
+        .lang-switch button {
+            background: none;
+            border: none;
+            color: var(--text-secondary);
+            font-family: 'Outfit', sans-serif;
+            font-size: 0.8rem;
+            padding: 8px 14px;
+            cursor: pointer;
+            transition: all 0.3s;
+        }
+
+        .lang-switch button.active {
+            background: rgba(212, 162, 78, 0.15);
+            color: var(--gold-light);
+        }
+
+        .lang-switch button:hover:not(.active) {
+            color: var(--text-primary);
+        }
+
+        [lang="en"] { display: none; }
+        body.en [lang="en"] { display: block; }
+        body.en [lang="ja"] { display: none; }
+    </style>
+</head>
+<body>
+    <div class="lang-switch">
+        <button class="active" onclick="switchLang('ja')">JA</button>
+        <button onclick="switchLang('en')">EN</button>
+    </div>
+
+    <div class="container">
+        <header>
+            <a class="back" href="index.html" lang="ja">&larr; TimeCam サポート</a>
+            <a class="back" href="index.html" lang="en">&larr; TimeCam Support</a>
+            <h1>
+                <span lang="ja">プライバシーポリシー</span>
+                <span lang="en">Privacy Policy</span>
+            </h1>
+            <p class="updated" lang="ja">制定日：2026年9月10日</p>
+            <p class="updated" lang="en">Effective date: September 10, 2026</p>
+        </header>
+
+        <!-- ============ 日本語 ============ -->
+        <section lang="ja">
+            <div class="highlight">
+                <strong>要点</strong>
+                <ul>
+                    <li>写真の加工処理（年代エフェクト・日付スタンプ）は<strong>すべて端末内で行われます</strong>。処理のために写真が外部サーバーへ送信されることはありません。</li>
+                    <li>解析ツール（アナリティクス）・広告 SDK・トラッキングは<strong>一切組み込んでいません</strong>。</li>
+                    <li>本アプリが利用者の個人情報を収集する仕組みはありません。</li>
+                    <li>ネットワークを使うのは、<strong>App 内課金（Apple のシステム）</strong>のときだけです。</li>
+                </ul>
+            </div>
+
+            <h2>1. 事業者</h2>
+            <p>
+                本アプリ「TimeCam」（以下「本アプリ」）は kouworks（以下「当方」）が提供します。
+                お問い合わせ先：<a href="mailto:contact@kou-works.jp">contact@kou-works.jp</a>
+            </p>
+
+            <h2>2. 取得する情報</h2>
+            <p>
+                本アプリは、氏名・メールアドレス・電話番号・位置情報・連絡先などの個人情報を収集しません。
+                アカウント登録の仕組みもありません。利用状況の統計やクラッシュログを当方が取得する機能も組み込んでいません。
+            </p>
+
+            <h2>3. カメラ・写真ライブラリへのアクセス</h2>
+            <ul>
+                <li><strong>カメラ</strong>：本アプリ内で写真を撮影し、年代エフェクトを適用するために使用します。</li>
+                <li><strong>フォトライブラリ（読み取り）</strong>：既存の写真を読み込んでエフェクトを適用するために使用します。</li>
+                <li><strong>フォトライブラリ（追加）</strong>：加工した写真を保存するために使用します。</li>
+            </ul>
+            <p>
+                いずれも利用者の許可を得た上で、本アプリの機能提供のためだけに使用します。許可は iOS の「設定」からいつでも変更できます。
+            </p>
+
+            <h2>4. 端末外への送信について</h2>
+            <p>
+                年代エフェクトの適用（彩度・色温度・粒子・ぼかし・ビネット・日付スタンプなどの画像処理）は、
+                すべて端末内の Core Image フレームワークで処理されます。撮影・選択した写真、加工後の写真のいずれも、
+                本アプリが外部サーバーへ送信することはありません。
+            </p>
+
+            <h2>5. 端末に保存するデータ</h2>
+            <p>
+                加工した写真は、利用者が「保存」を選んだ場合にのみ端末の写真ライブラリに保存されます。
+                これ以外に、本アプリが端末内に利用者の設定や利用状況を記録する仕組みはありません。
+            </p>
+
+            <h2>6. アプリ内課金</h2>
+            <p>
+                Pro 版の購入・復元は Apple の App Store（StoreKit）を通じて処理されます。決済処理および購入履歴の管理は
+                Apple が行い、当方が利用者の支払い情報や個人情報を受け取ることはありません。ネットワーク通信が発生するのは、
+                この購入・復元の処理のときのみです。
+            </p>
+
+            <h2>7. 第三者への提供</h2>
+            <p>
+                当方は、利用者の情報を収集していないため、第三者へ提供・販売することもありません。
+                解析・広告を目的とした第三者サービスは使用していません。
+            </p>
+
+            <h2>8. 解析ツール</h2>
+            <p>
+                本アプリには、解析（アナリティクス）・広告・トラッキングを目的とした SDK は組み込まれていません。
+            </p>
+
+            <h2>9. 本ポリシーの変更</h2>
+            <p>
+                本ポリシーを変更する場合は、本ページを更新し、上記の制定日を改めます。重要な変更がある場合は、
+                アプリのアップデート情報でもお知らせします。
+            </p>
+
+            <h2>10. お問い合わせ</h2>
+            <p>
+                本ポリシーおよび本アプリに関するお問い合わせは
+                <a href="mailto:contact@kou-works.jp">contact@kou-works.jp</a> までご連絡ください。<br>
+                開発者：kouworks（<a href="https://kou-works.jp/">https://kou-works.jp/</a>）
+            </p>
+        </section>
+
+        <!-- ============ English ============ -->
+        <section lang="en">
+            <div class="highlight">
+                <ul>
+                    <li>Photo processing (era effects, date stamps) happens <strong>entirely on your device</strong>. Photos are never sent to a server for processing.</li>
+                    <li>The App contains <strong>no analytics, no advertising SDKs, and no tracking</strong>.</li>
+                    <li>The App has no mechanism to collect your personal information.</li>
+                    <li>The App uses the network only for <strong>in-app purchases handled by Apple</strong>.</li>
+                </ul>
+            </div>
+
+            <h2>1. Who We Are</h2>
+            <p>
+                "TimeCam" (the "App") is provided by kouworks ("we", "us").
+                Contact: <a href="mailto:contact@kou-works.jp">contact@kou-works.jp</a>
+            </p>
+
+            <h2>2. Information We Collect</h2>
+            <p>
+                The App does not collect personal information such as your name, email address, phone number, location,
+                or contacts. There is no account to create. It contains no mechanism for us to receive usage statistics
+                or crash logs.
+            </p>
+
+            <h2>3. Camera and Photo Library Access</h2>
+            <ul>
+                <li><strong>Camera</strong> — used to take photos inside the App and apply era effects.</li>
+                <li><strong>Photo Library (read)</strong> — used to import existing photos for effect processing.</li>
+                <li><strong>Photo Library (add)</strong> — used to save your processed photos.</li>
+            </ul>
+            <p>
+                Each is used only with your permission and only to provide the App's features. You can change these
+                permissions anytime in iOS Settings.
+            </p>
+
+            <h2>4. Data Sent Off Your Device</h2>
+            <p>
+                Applying an era effect (saturation, color temperature, grain, blur, vignette, date stamp, and similar
+                image processing) runs entirely on-device using the Core Image framework. Neither the photos you
+                capture or select, nor the processed results, are ever sent to a server by the App.
+            </p>
+
+            <h2>5. Data Stored on Your Device</h2>
+            <p>
+                A processed photo is saved to your device's photo library only when you choose to save it. Beyond
+                that, the App has no mechanism to record your settings or usage on the device.
+            </p>
+
+            <h2>6. In-App Purchases</h2>
+            <p>
+                Purchasing and restoring the Pro upgrade is handled by the App Store (StoreKit). Apple processes the
+                payment and manages your purchase history; we never receive your payment details or personal
+                information. This is the only case in which the App communicates over the network.
+            </p>
+
+            <h2>7. Sharing with Third Parties</h2>
+            <p>
+                We collect no user information, so there is nothing for us to share or sell. The App uses no
+                third-party analytics or advertising services.
+            </p>
+
+            <h2>8. Analytics</h2>
+            <p>
+                The App contains no analytics, advertising, or tracking SDKs.
+            </p>
+
+            <h2>9. Changes to This Policy</h2>
+            <p>
+                If this policy changes, we will update this page and revise the effective date above. Significant
+                changes will also be noted in the App's release notes.
+            </p>
+
+            <h2>10. Contact</h2>
+            <p>
+                Questions about this policy or the App: <a href="mailto:contact@kou-works.jp">contact@kou-works.jp</a><br>
+                Developer: kouworks (<a href="https://kou-works.jp/">https://kou-works.jp/</a>)
+            </p>
+        </section>
+
+        <div class="film-divider">
+            <span class="film-hole"></span><span class="film-hole"></span>
+            <span class="film-frame"></span><span class="film-frame"></span><span class="film-frame"></span>
+            <span class="film-frame"></span><span class="film-frame"></span>
+            <span class="film-hole"></span><span class="film-hole"></span>
+        </div>
+
+        <footer>
+            <p>
+                <a href="index.html" lang="ja">サポート</a><a href="index.html" lang="en">Support</a>
+                &middot;
+                <a href="https://kou-works.jp/">kouworks</a>
+            </p>
+            <p>&copy; 2026 kouworks. All rights reserved.</p>
+        </footer>
+    </div>
+
+    <script>
+        function switchLang(lang) {
+            document.body.className = lang === 'en' ? 'en' : '';
+            document.querySelectorAll('.lang-switch button').forEach(btn => {
+                btn.classList.toggle('active', btn.textContent === lang.toUpperCase());
+            });
+        }
+    </script>
+</body>
+</html>
